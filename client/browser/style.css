@@ -1,0 +1,46 @@
+body {
+  background: #000;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.topbar {
+  background: #787878;
+  height: 25px;
+  width: 100%;
+}
+
+.url {
+  border: 0 none #fff;
+  background-color: #787878;
+  color: white;
+  width: calc(100vw - 50px - 7px);
+  height: 99%;
+}
+
+.url:focus {
+  outline: none;
+}
+
+.buttons {
+  margin-left: 3px;
+  height: 25px;
+  padding: 3px;
+  display: inline;
+}
+
+.button {
+  color: #000;
+  cursor: pointer;
+}
+
+.content {
+  height: calc(100vh - 25px);
+  width: 100%;
+}
+
+.frame {
+  height: 100%;
+  width: 100%;
+}

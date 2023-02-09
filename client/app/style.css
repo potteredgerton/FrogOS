@@ -1,0 +1,177 @@
+body {
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("assets/images/wallpaper.jpg");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+:root::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#container {
+  animation: fadeIn 1s;
+  width: 100%;
+  height: 100vh;
+}
+
+#apps-container {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  height: 75%;
+  width: 75%;
+  position: absolute;
+  left: 12.5%;
+  top: 12.5%;
+  display: none;
+  border: 2px solid #000;
+}
+
+#apps-container img {
+  height: 75px;
+  width: 75px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  top: 40px;
+  left: 0;
+}
+
+.notifications {
+  position: absolute;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  background-color: #d0d0d0;
+}
+
+#tbarapps, #tbarappsd {
+  height: 100%;
+  width: 45px;
+  display: flex;
+  flex-direction: column;
+}
+
+#tbarapps img, #tbarappsd img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin: 2.5px;
+  border-radius: 50%;
+}
+
+#expand-apps {
+  height: 45px;
+  width: 45px;
+}
+
+#taskbar {
+  position: absolute;
+  display: flexbox;
+  flex-direction: column;
+  bottom: 0;
+  left: 0;
+  width: 45px;
+  height: 100%;
+  background-color: lightgrey;
+  align-items: space-between;
+}
+
+.topbar {
+  height: 30px;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dateandtime {
+  width: auto;
+  height: 100%;
+  transition: 100ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.os-window {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 75vw;
+  height: 75vh;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  resize: both;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.os-window .window-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 7.5px;
+  background: #fff;
+  cursor: move;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+  resize: both;
+}
+
+.os-window .window-bar:active {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.os-window .window-bar .brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.os-window .window-bar .brand p {
+  margin-left: 3px;
+}
+
+.modify {
+  background-color: inherit;
+  height: 32px;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  display: inline;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <link rel="manifest" href="/manifest.json">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frog OS</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script src="./sw.js"></script>
+</head>
+
+<body>
+  <script>
+    if (!window.location.hostname === "https://frogos.app") {
+      if (typeof navigator.serviceWorker !== 'undefined') {
+        navigator.serviceWorker.register('/sw.js')
+      }
+    }
+  </script>
+  <div id="container">
+    <div id="apps-container"></div>
+    <div class="topbar">
+      <div class="dateandtime">
+        <span id="date"></span>
+        <span>&nbsp;</span>
+        <span id="time"></span>
+      </div>
+    </div>
+    <div id="taskbar">
+      <div id="tbarappsdiv">
+        <div id="tbarapps"></div>
+      </div>
+    </div>
+    <div id="expand-apps">
+      <img src="assets/images/icons/menu.png" onclick="expandApps()" alt="Open apps menu">
+    </div>
+  </div>
+  <script>
+    document.addEventListener("load", e => {
+      if (!a) {
+        window.location.reload();
+      };
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>

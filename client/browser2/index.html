@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="style.css">
+</head>
+
+<body>
+  <div class="tab">
+    <!-- Create the tab links -->
+    <button class="tablinks" onclick="openTab(event, 'tab1')">Tab 1</button>
+    <button class="tablinks" onclick="openTab(event, 'tab2')">Tab 2</button>
+    <button class="tablinks" onclick="openTab(event, 'tab3')">Tab 3</button>
+  </div>
+
+  <!-- Create the tab content -->
+  <div id="tab1" class="tabcontent">
+    <!-- Use an iframe to display a website in the tab -->
+    <iframe src="https://www.example.com"></iframe>
+  </div>
+  <div id="tab2" class="tabcontent">
+    <iframe src="https://www.example.com"></iframe>
+  </div>
+  <div id="tab3" class="tabcontent">
+    <iframe src="https://www.example.com"></iframe>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

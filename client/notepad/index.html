@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <title>Text Editor</title>
+</head>
+
+<body>
+  <div id="nav">
+    <ul>
+      <li>
+        <a id="file-menu" class="navItem">File</a>
+        <div class="submenu">
+          <ul>
+            <li>New</li>
+            <li>New window</li>
+            <li>Open</li>
+            <li onclick="saveFile()">Save</li>
+            <li>Print</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <a id="edit-menu" class="navItem">Edit</a>
+        <div class="submenu">
+          <ul>
+            <li>Undo</li>
+            <li>Cut</li>
+            <li>Copy</li>
+            <li>Paste</li>
+            <li>Delete</li>
+            <li>Find</li>
+            <li>Find and Replace</li>
+            <li>Go To</li>
+            <li>Select all</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <a id="format-menu" class="navItem">Format</a>
+        <div class="submenu">
+          <ul>
+            <li>Word Wrap</li>
+            <li>Font</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <a id="view-menu" class="navItem">View</a>
+        <div class="submenu">
+          <ul>
+            <li>Zoom In</li>
+            <li>Zoom Out</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <textarea id="editor"></textarea>
+  <script src="script.js"></script>
+</body>
+
+</html>
