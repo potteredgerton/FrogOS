@@ -1,40 +1,10 @@
-#settings-app {
+* {
   font-family: sans-serif;
-  background-color: #fff;
-  height: 80%;
-  width: 80%;
-  padding: 20px;
 }
 
-#settings-app h2 {
-  margin: 10px 0;
-}
-
-#settings-app div {
-  display: flex;
-  align-items: center;
-  margin: 5px 0;
-}
-
-#settings-app label {
-  margin-right: 10px;
-}
-
-#settings-app select,
-#settings-app input[type="color"],
-#settings-app input[type="password"] {
-  width: 150px;
-  height: 25px;
-  background-color: #fff;
-  border: 1px solid #999;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-}
-
-#password-protection-container {
-  display: none;
-}
-
-.wallpaper {
+[data-tooltip]::after {
   display: block;
-  height: 400px;
+  content: attr(data-tooltip);
+  font-weight: 400;
+  font-size: 0.5em;
 }

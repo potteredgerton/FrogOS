@@ -20,37 +20,12 @@ createApp("Calculator", "assets/images/apps/calculator.png", "calculator", "/cal
 //createApp("Tunee", "assets/images/apps/tunee.png", "tunee", "/tunee");
 createApp("Settings", "assets/images/apps/settings.png", "settings", "/settings");
 
-function addNotification(app, title, content) {
-  var notification = document.createElement("div");
-  var notificationAppName = document.createElement("h1");
-  notificationAppName.innerText = app;
-  var notificationTitle = document.createElement("h2");
-  notificationTitle.innerText = title;
-  var notificationContent = document.createElement("p");
-  notificationContent.innerText = content;
-  notification.append(notificationContent);
-  notification.append(notificationTitle);
-  notification.append(notificationAppName);
-  document.body.append(notification);
-  console.log(notification);
-}
-
-function loop() {
-  var date = new Date();
-  var sec = date.getSeconds();
-  setTimeout(() => {
-    setInterval(() => {
-      datetime();
-    }, 60 * 500);
-  }, (60 - sec) * 1000);
-}
-
 function setTime(date, time) {
   document.getElementById('time').innerHTML = (time);
   document.getElementById('date').innerHTML = (date);
 }
 
-function datetime() {
+function getDateAndTime() {
   const val = new Date();
   let min = val.getMinutes();
   let vmin = min.toString();
@@ -79,8 +54,7 @@ function datetime() {
   }
 }
 
-datetime();
-loop();
+setInterval(getDateAndTime, 1000);
 
 function createApp(name, image, id, src, height, width) {
   let img = document.createElement("img");

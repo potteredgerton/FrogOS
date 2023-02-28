@@ -13,6 +13,9 @@
     <h2>Appearence</h2>
     <label for="cursorselect">Select cursor</label>
     <button type="file" id="cursorselect">Upload file</button>
+    <h2 data-tooltip="WARNING! THIS IS DANGEROUS. Do not paste code here that you do not trust">Startup Script</h2>
+    <input id="startup" placeholder="Startup script" autocomplete="off">
+    <button onclick="setBootScript()">Set</button>
   </div>
   <script src="script.js"></script>
 </body>

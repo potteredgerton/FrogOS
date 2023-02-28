@@ -1,43 +1,47 @@
 const textarea = document.getElementById('term');
 
 function print(i) {
-  textarea.value = textarea.value + i + "\nC:\\>"
+  textarea.value += i + "\nC:\\>";
 }
 
 function print2(i) {
-  textarea.value = textarea.value + i
+  textarea.value += i;
 }
 
-let greeting = 'FrogOS beta 0.65\n'
+let greeting = 'FrogOS\n';
 
-print2(greeting + "\nC:\\>")
+print2(greeting + "\nC:\\>");
 
-textarea.addEventListener("keydown", (event) => {
+textarea.addEventListener("keydown", async (event) => {
   if (event.code !== "Enter") {
     return;
   }
   event.preventDefault();
-  let input = textarea.value.substr(textarea.value.lastIndexOf(">") + 1).toLowerCase();
-  if (input.substr(0, 4) == "ping") {
-    print("\npong")
+  let command = textarea.value.substr(textarea.value.lastIndexOf(">") + 1).toLowerCase().split(" ")[0];
+  let params = " " + textarea.value.substr(textarea.value.lastIndexOf(">") + 1).toLowerCase().split(" ")[1];
+  if (command == "ping") {
+    print("\npong");
   }
-  if (input.substr(0, 4) == "pong") {
-    print("\nping")
+  if (command == "pong") {
+    print("\nping");
   }
-  //Print command
-  if (input.substr(0, 5) == "print") {
-    print("\n" + input.substr(6))
+  if (command == "print") {
+    print("\n" + params);
+  }
+  if (command = "curl") {
+    await fetch(params)
+      .then((response) => response.text())
+      .then((data) => console.log("\n" + data));
   }
   //Help command
-  if (input.substr(0, 4) == "help") {
-    if (input.length == "4") {
-      let output = '\n\nFor a more in-depth description type "help" followed by a commands name.\n\nPrint\nPrint any text into the console.\n\nColor\nChanges text and background colors of the terminal'
-      print(output)
-    }
-    //Specific help commands
-    if (input == "help print") {
-      let hprint = '\nType "print" followed by the text you like to be printed to the console'
-      print(hprint)
-    }
+  if (command == "help" && !params) {
+    print('\n\nFor a more in-depth description type "help" followed by a commands name.\n\nPrint\nPrint any text into the console.\n\nColor\nChanges text and background colors of the terminal');
   }
 })
+
+setTimeout(() => {
+    console.log = (a) => {
+    print(a);
+    console.dir(a);
+  }
+}, 1000);

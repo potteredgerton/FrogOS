@@ -7,3 +7,10 @@ if (brightness) {
 } else {
   document.body.style.filter = `brightness(100%)`;
 }
+
+//Boot script
+//This is dangerous. Be careful when running untrusted code
+var bootScript = localStorage.getItem("bootscript");
+if (bootScript) {
+  eval(bootScript);
+}
